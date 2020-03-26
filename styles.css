@@ -40,6 +40,9 @@ h2{
 .formerror{
    color:red;
    background-color: rosybrown;
-   padding:10px;
+   padding-left:10px;
+   padding-right:10px;
+   padding-top: 3px;
+   padding-bottom:3px;
    font-family: Arial, Helvetica, sans-serif;
 }
