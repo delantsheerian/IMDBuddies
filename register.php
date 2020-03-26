@@ -16,6 +16,9 @@ if(!empty($_POST)){
 	
 
 	try{
+		
+		$user = new User();
+		
 				//wachtwoord beveiligen
 		$wachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT, ['cost' => 12]); //2 tot de zoveelste keer gehasht
 		
