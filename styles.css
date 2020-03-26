@@ -1,0 +1,45 @@
+.aanmeldenBuddy{
+padding-left: 40px;
+padding-top: 20px;
+width: 200px;
+}
+
+h2{
+  color:#0049FF;
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+.aanmeldenBuddy label {
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+
+#Wachtwoord, #Voornaam, #Achternaam, #Email{
+    width: 300px;
+    border: none;
+    border-radius: 2px;
+    background-color: #E8E8E8;
+}
+
+.btn-aanmelden{
+    text-align: center;
+    border-radius:4% ;
+    padding: 7px;
+    border: none;
+    background-color:#0049FF;
+    width: 160px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+
+.formerror{
+   color:red;
+   background-color: rosybrown;
+   padding:10px;
+   font-family: Arial, Helvetica, sans-serif;
+}
