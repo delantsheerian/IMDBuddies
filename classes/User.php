@@ -265,7 +265,7 @@
 
         // kenmerken opslaan in databank
 
-        public function saveKenmerrk(){
+        public function saveKenmerken(){
                 $conn = Db::getConnection();
 
 
