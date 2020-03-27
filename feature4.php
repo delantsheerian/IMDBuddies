@@ -17,7 +17,8 @@ if(!empty($_POST)){
 
 	try{
 		$user = new User();
-		
+        
+        
 				
         $user->setKenmerk1($_POST['kenmerk1']);
         $user->setKenmerk2($_POST['kenmerk2']);
