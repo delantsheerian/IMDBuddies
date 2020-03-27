@@ -1,4 +1,5 @@
 <?php
+
 include_once(__DIR__ . "/User.php");
 
 if (!empty($_POST)){	
@@ -11,11 +12,10 @@ if (!empty($_POST)){
    
    }
 
+
 if(!empty($_POST)){
-	
 
 	try{
-
 		$user = new User();
 		
 				
@@ -32,12 +32,6 @@ if(!empty($_POST)){
 	catch (\Throwable $th){
 		$error = $th->getMessage();
 	}
-
-    
-
-
-
-
 
 ?>
 
