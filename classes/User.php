@@ -9,7 +9,14 @@
         private $achternaam; 
         private $wachtwoord;
 
-                
+        private $kenmerk1; 
+        private $kenmerk2; 
+        private $kenmerk3;
+        private $kenmerk4; 
+        private $kenmerk5;
+
+        // getters en setters
+
         /**
          * Get the value of email
          */ 
@@ -111,6 +118,107 @@
                 return $this;
         }
 
+        //getters en setters kenmerken
+
+
+
+        public function getKenmerk1()
+        {
+                return $this->kenmerk1;
+        }
+
+        /**
+         * Set the value of kenmerk1
+         *
+         * @return  self
+         */ 
+        public function setKenmerk1($kenmerk1)
+        {
+                $this->kenmerk1 = $kenmerk1;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of kenmerk2
+         */ 
+        public function getKenmerk2()
+        {
+                return $this->kenmerk2;
+        }
+
+        /**
+         * Set the value of kenmerk2
+         *
+         * @return  self
+         */ 
+        public function setKenmerk2($kenmerk2)
+        {
+                $this->kenmerk2 = $kenmerk2;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of kenmerk3
+         */ 
+        public function getKenmerk3()
+        {
+                return $this->kenmerk3;
+        }
+
+        /**
+         * Set the value of kenmerk3
+         *
+         * @return  self
+         */ 
+        public function setKenmerk3($kenmerk3)
+        {
+                $this->kenmerk3 = $kenmerk3;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of kenmerk4
+         */ 
+        public function getKenmerk4()
+        {
+                return $this->kenmerk4;
+        }
+
+        /**
+         * Set the value of kenmerk4
+         *
+         * @return  self
+         */ 
+        public function setKenmerk4($kenmerk4)
+        {
+                $this->kenmerk4 = $kenmerk4;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of kenmerk5
+         */ 
+        public function getKenmerk5()
+        {
+                return $this->kenmerk5;
+        }
+
+        /**
+         * Set the value of kenmerk5
+         *
+         * @return  self
+         */ 
+        public function setKenmerk5($kenmerk5)
+        {
+                $this->kenmerk5 = $kenmerk5;
+
+                return $this;
+        }
+
 
         public static function getAll(){
                 $conn = Db::getConnection();
@@ -120,10 +228,12 @@
                 return $users;
         }
 
+        // user opslaan in databank
 
         public function save(){
                 $conn = Db::getConnection();
 
+                //dubbele emails controleren
                 if (isset($_POST['email'])) {
                         $email = $this->getEmail();
                         $conn = Db::getConnection();
@@ -148,26 +258,35 @@
                  $statement->bindValue(":achternaam", $achternaam);
                 $statement->bindValue(":wachtwoord", $wachtwoord);
 
-                //dubbele emails checken
-
-
 
                 $result = $statement->execute();
                 return $result;
         }
 
-       
+        // kenmerken opslaan in databank
+
+        public function saveKenmerrk(){
+                $conn = Db::getConnection();
 
 
+                $statement = $conn->prepare("insert into users (kenmerk1, kenmerk2, kenmerk3, kenmerk4, kenmerk5) values (:kenmerk1, :kenmerk2, :kenmerk3, :kenmerk4, :kenmerk5)");
+
+                $kenmerk1 = $this->getKenmerk1();
+                $kenmerk2 = $this->getKenmerk2();
+                $kenmerk3 = $this->getKenmerk3();
+                $kenmerk4 = $this->getKenmerk4();
+                $kenmerk5 = $this->getKenmerk5();
+
+                $statement->bindValue(":kenmerk1", $kenmerk1);
+                $statement->bindValue(":kenmerk2", $kenmerk2);
+                 $statement->bindValue(":kenmerk3", $kenmerk3);
+                $statement->bindValue(":kenmerk4", $kenmerk4);
+                $statement->bindValue(":kenmerk5", $kenmerk5);
 
 
-
-                
-
-
-
-
-
+                $result = $statement->execute();
+                return $result;
+        }
 
 
     }
