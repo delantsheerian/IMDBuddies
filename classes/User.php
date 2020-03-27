@@ -1,6 +1,6 @@
 <?php
 
-        include_once (__DIR__ . "/classes/databank.php");
+        include_once (__DIR__ . "/classes/Db.php");
 
     class User{
         private $id;
