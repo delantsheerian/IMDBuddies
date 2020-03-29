@@ -66,23 +66,25 @@ include_once ('Db.class.php');
                 return $this;
         }
 
-        public function Select() {
-                $conn = Db::getConnection();
-                $statement = $conn->prepare("select * from user where id=1");
-                $profile = $statement->fetch(PDO::FETCH_ASSOC);
-    
-                if ($statement->execute()){
-                    return true;
-                } else {
-                    return false;
-                }
+        public function canLogin() {
+            $conn = Db::getConnection();
+            $statement = $conn->prepare("select wachtwoord from users where email = :email");
+            $statement->bindValue(":email", $this->email);
+            $statement->execute();
+            $dbPassword = $statement->fetchColumn();
+            if (password_verify($this->password, $dbPassword)) {
+                session_start();
+                $_SESSION['email'] = $this->email;
+                header('location: index.php');
+            }
         }
 
-        public function changeSettings($email, $newEmail, $voornaam, $achternaam, $profielfoto, $buddy, $newpassword){
-                $conn = Db::getConnection();
+        public function changeSettings($email, $newEmail, $voornaam, $achternaam, $profielfoto, $buddy, $newpassword){  
+            $conn = Db::getConnection();
                 
                 if($email != $newEmail){
-                    $statementCheck = $conn->prepare("select * from users where id = 1");
+                    $statementCheck = $conn->prepare("select * from users where email = :email");
+                    $statementCheck->bindValue(":email", $email);
                     $statementCheck->execute();
                     $userExist = $statementCheck->rowCount();
                 }else{
@@ -102,7 +104,7 @@ include_once ('Db.class.php');
                     }
         
                     $conn =  Db::getConnection();
-                    $statement = $conn->prepare("UPDATE users SET email=:newEmail, voornaam=:voornaam, achternaam=:achternaam, profielfoto=:profielfoto, buddy=:buddy ".$code." WHERE id = 1");
+                    $statement = $conn->prepare("UPDATE users SET email=:newEmail, voornaam=:voornaam, achternaam=:achternaam, profielfoto=:profielfoto, buddy=:buddy ".$code." WHERE email = $email");
                     $statement->bindValue(":newEmail", $newEmail);
                     $statement->bindValue(":voornaam", $voornaam);
                     $statement->bindValue(":achternaam", $achternaam);
@@ -112,7 +114,8 @@ include_once ('Db.class.php');
                     if($statement->execute()){
                        return true;
                     }else{
-                        return "ERROR: Er is iets fout gegaan tijdens het aanpassen van de gegevens";
+                        //echo "Er is iets foutgelopen bij het updaten.";
+                        echo $email . "___" . $newEmail . "___" . $voornaam . "___" . $achternaam . "___" . $profielfoto . "___" . $buddy . "___" . $newpassword; 
                     }
                 }else{
                     //username bestaat wel, mag niet veranderd worden
