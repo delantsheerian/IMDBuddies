@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< Updated upstream
 include_once(__DIR__ . "/classes/User.php");
+=======
+include_once(__DIR__ . "/User.php");
+>>>>>>> Stashed changes
 
 if (!empty($_POST)){	
     $user = new User();
@@ -17,8 +21,12 @@ if(!empty($_POST)){
 
 	try{
 		$user = new User();
+<<<<<<< Updated upstream
         
         
+=======
+		
+>>>>>>> Stashed changes
 				
         $user->setKenmerk1($_POST['kenmerk1']);
         $user->setKenmerk2($_POST['kenmerk2']);
@@ -32,10 +40,17 @@ if(!empty($_POST)){
 
 	catch (\Throwable $th){
 		$error = $th->getMessage();
+<<<<<<< Updated upstream
     }
     
 }
 
+=======
+	}
+}
+
+
+>>>>>>> Stashed changes
 ?>
 
 
@@ -47,6 +62,7 @@ if(!empty($_POST)){
 </head>
 <body>
 
+<<<<<<< Updated upstream
 <div class="aanmakenKenmerken">
 		<div class="form kenmerken">
 			<form action="" method="post">
@@ -107,5 +123,95 @@ if(!empty($_POST)){
             </div>
         </div>
     </div>
+=======
+<div class="form__field">
+					<label for="Woonplaats">In welke stad woon je</label>
+					<input type="text" id="Kenmerk1" name="kenmerk1">
+				</div>
+
+<label for="keuzeVak">Design of development? </label>
+<select id="Kenmerk2" name="kenmerk2">
+<option value="design">Design</option>
+<option value="development">Development</option>
+</select>
+
+<br>
+
+<label for="jaar">In welk jaar zit je? </label>
+<select id="Kenmerk3" name="kenmerk3">
+<option value="eersteJaar">1IMD</option>
+<option value="tweedeJaar">2IMD</option>
+<option value="derdeJaar">3IMD</option>
+</select>
+
+<br>
+<br>
+<label for="tijd">Wat doe je graag in je vrije tijd? </label>
+<br>
+<label for="sporten">
+    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
+    Sporten
+</label><br/>
+<label for="Gamen">
+    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
+    Gamen
+</label><br/>
+<label for="Creatief">
+    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
+    Creatief bezig zijn 
+</label><br/>
+<label for="Feesten">
+    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
+    Feesten
+</label><br/>
+<label for="instrument">
+    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
+    Een instrument beoefenen
+</label><br/>
+<label for="andere">
+    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
+    Geen van bovenstaande
+</label><br/>
+
+<br>
+<br>
+<label for="muziek">Wat is je favoriete muziekstijl?</label>
+<br>
+<label for="pop">
+    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
+    Pop-muziek
+</label><br/>
+<label for="techno">
+    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
+    Techno
+</label><br/>
+<label for="metal">
+    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
+    Metal
+</label><br/>
+<label for="dubstep">
+    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
+    Dupstep
+</label><br/>
+<label for="drumandbass">
+    <input type="checkbox"id="Kenmerk4" name="kenmerk4">
+    Drum and bass
+</label><br/>
+<label for="andere">
+    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
+    Nog iets anders
+</label><br/>
+
+<br>
+<br>
+
+<div class="form__field">
+					<input type="submit" value="Aanmelden" class="btn-aanmelden">	
+					
+				</div>
+
+
+
+>>>>>>> Stashed changes
 </body>
 </html>
