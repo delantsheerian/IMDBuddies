@@ -1,32 +1,27 @@
 <?php
 
-<<<<<<< Updated upstream
 include_once(__DIR__ . "/classes/User.php");
-=======
-include_once(__DIR__ . "/User.php");
->>>>>>> Stashed changes
 
-if (!empty($_POST)){	
-    $user = new User();
-   $kenmerk1 = $_POST['kenmerk1'];
-   $kenmerk2 = $_POST['kenmerk2'];
-   $kenmerk3 = $_POST['kenmerk3'];
-   $kenmerk4 = $_POST['kenmerk4'];
-   $kenmerk5 = $_POST['kenmerk5'];
-   
-   }
+    include_once(__DIR__ . "/db/db.php");
+    include_once(__DIR__ . "/classes/user.php");
+
+    if (!empty($_POST)){
+
+        $user = new User();
+        $kenmerk1 = $_POST['kenmerk1'];
+        $kenmerk2 = $_POST['kenmerk2'];
+        $kenmerk3 = $_POST['kenmerk3'];
+        $kenmerk4 = $_POST['kenmerk4'];
+        $kenmerk5 = $_POST['kenmerk5'];
+    
+    }
 
 
-if(!empty($_POST)){
 
 	try{
 		$user = new User();
-<<<<<<< Updated upstream
         
-        
-=======
-		
->>>>>>> Stashed changes
+
 				
         $user->setKenmerk1($_POST['kenmerk1']);
         $user->setKenmerk2($_POST['kenmerk2']);
@@ -35,22 +30,31 @@ if(!empty($_POST)){
         $user->setKenmerk5($_POST['kenmerk5']);
 
 
-		$user->saveKenmerken();
-	}
+    if(!empty($_POST)){
+
+        try{
+            $user = new User();
+            
+            $user->setKenmerk1($_POST['kenmerk1']);
+            $user->setKenmerk2($_POST['kenmerk2']);
+            $user->setKenmerk3($_POST['kenmerk3']);
+            $user->setKenmerk4($_POST['kenmerk4']);
+            $user->setKenmerk5($_POST['kenmerk5']);
+
+            $user->saveKenmerken();
+        }
+
 
 	catch (\Throwable $th){
 		$error = $th->getMessage();
-<<<<<<< Updated upstream
-    }
-    
-}
 
-=======
+
+
 	}
 }
 
 
->>>>>>> Stashed changes
+
 ?>
 
 
@@ -62,7 +66,7 @@ if(!empty($_POST)){
 </head>
 <body>
 
-<<<<<<< Updated upstream
+
 <div class="aanmakenKenmerken">
 		<div class="form kenmerken">
 			<form action="" method="post">
@@ -123,7 +127,6 @@ if(!empty($_POST)){
             </div>
         </div>
     </div>
-=======
 <div class="form__field">
 					<label for="Woonplaats">In welke stad woon je</label>
 					<input type="text" id="Kenmerk1" name="kenmerk1">
@@ -212,6 +215,5 @@ if(!empty($_POST)){
 
 
 
->>>>>>> Stashed changes
 </body>
 </html>

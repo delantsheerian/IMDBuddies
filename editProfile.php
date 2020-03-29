@@ -1,7 +1,7 @@
 <?php
     
-    include_once(__DIR__ . "/classes/Db.class.php");
-    include_once(__DIR__ . "/classes/User.class.php");
+    include_once(__DIR__ . "/db/db.php");
+    include_once(__DIR__ . "/classes/user.php");
 
     // NOG TIMESTAMP TOEVOEGEN!!
 
@@ -44,7 +44,7 @@
             }
 
             // session_destroy();
-            header('location: settings.php');
+            header('location: editProfile.php');
         }else{
             echo $result;
         }
@@ -61,7 +61,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta charset="UTF-8">
+    <title>Profiel aanpassen • Companion</title>
+</head>
 <body>
 <section class="content">
 <h1> Edit account:</h1>
