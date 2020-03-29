@@ -1,8 +1,8 @@
 
 <?php
 
-	include_once (__DIR__ . "/db/db.php");
-	include_once(__DIR__ . "/classes/User.php");
+	/*include_once (__DIR__ . "/db/db.php");*/
+	include_once(__DIR__ . "/classes/user.php");
 	
 	
 	if (!empty($_POST)){	
@@ -55,7 +55,7 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>Aanmelden</title>
+  <title>Aanmelden bij Companion</title>
 </head>
 
 <body>
