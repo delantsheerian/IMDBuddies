@@ -75,61 +75,27 @@ if(!empty($_POST)){
 
                     <br>
                     <br>
-                    <label for="tijd">Wat doe je graag in je vrije tijd? </label>
-                    <br>
-                    <label for="sporten">
-                    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
-                    Sporten
-                    </label><br/>
-                    <label for="Gamen">
-                    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
-                    Gamen
-                    </label><br/>
-                    <label for="Creatief">
-                    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
-                    Creatief bezig zijn 
-                    </label><br/>
-                    <label for="Feesten">
-                    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
-                    Feesten
-                    </label><br/>
-                    <label for="instrument">
-                    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
-                    Een instrument beoefenen
-                    </label><br/>
-                    <label for="andere">
-                    <input type="checkbox" id="Kenmerk5" name="kenmerk5">
-                    Geen van bovenstaande
-                    </label><br/>
+                    
+                    <label for="jaar">Wat doe je graag in je vrije tijd? </label>
+                    <select id="Kenmerk4" name="kenmerk4">
+                    <option value="sporten">Sporten</option>
+                    <option value="Gamen">Gamen</option>
+                    <option value="Creatief">Ceatief bezig zijn</option>
+                    <option value="Feesten">Feesten</option>
+                    <option value="Instrument">Instrument bespelen</option>
+                    <option value="Andere">Andere</option>
+                    </select>
 
-                    <br>
-                    <br>
-                    <label for="muziek">Wat is je favoriete muziekstijl?</label>
-                    <br>
-                    <label for="pop">
-                    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
-                     Pop-muziek
-                    </label><br/>
-                    <label for="techno">
-                    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
-                    Techno
-                    </label><br/>
-                    <label for="metal">
-                    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
-                    Metal
-                    </label><br/>
-                    <label for="dubstep">
-                     <input type="checkbox" id="Kenmerk4" name="kenmerk4">
-                    Dupstep
-                    </label><br/>
-                    <label for="drumandbass">
-                    <input type="checkbox"id="Kenmerk4" name="kenmerk4">
-                     Drum and bass
-                    </label><br/>
-                    <label for="andere">
-                    <input type="checkbox" id="Kenmerk4" name="kenmerk4">
-                    Nog iets anders
-                    </label><br/>
+                    <label for="muziek">Welke muziek luister je graag? </label>
+                    <select id="Kenmerk5" name="kenmerk5">
+                    <option value="pop">Pop</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="hiphop">Hiphop/rap</option>
+                    <option value="Techno">Techno</option>
+                    <option value="Drumandbass">Drum and Bass</option>
+                    <option value="Andere">Andere</option>
+                    </select>
+                    
 
                     <br>
                     <br>
