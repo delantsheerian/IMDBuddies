@@ -66,7 +66,7 @@
         }
 
         public function getPassword(){
-                return $this->password;
+            return $this->password;
         }
 
         public function setPassword($password){
@@ -80,12 +80,12 @@
         }
 
         public function getProfielfoto(){
-                return $this->profielfoto;
+            return $this->profielfoto;
         }
 
         public function setProfielfoto($profielfoto){
-                $this->profielfoto = $profielfoto;
-                return $this;
+            $this->profielfoto = $profielfoto;
+            return $this;
         }
 
         public function getBuddy(){
@@ -93,8 +93,8 @@
         }
 
         public function setBuddy($buddy){
-                $this->buddy = $buddy;
-                return $this;
+            $this->buddy = $buddy;
+            return $this;
         }
 
         public function getKenmerk1(){
@@ -176,7 +176,7 @@
             $email = $this->getEmail();
             $voornaam = $this->getVoornaam();
             $achternaam = $this->getAchternaam();
-            $wachtwoord = $this->getWachtwoord();
+            $wachtwoord = $this->getPassword();
 
             $statement->bindValue(":email", $email);
             $statement->bindValue(":voornaam", $voornaam);
