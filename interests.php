@@ -1,40 +1,39 @@
 <?php
 
-include_once(__DIR__ . "/classes/User.php");
+    include_once(__DIR__ . "/db/db.php");
+    include_once(__DIR__ . "/classes/User.php");
 
-if (!empty($_POST)){	
-    $user = new User();
-   $kenmerk1 = $_POST['kenmerk1'];
-   $kenmerk2 = $_POST['kenmerk2'];
-   $kenmerk3 = $_POST['kenmerk3'];
-   $kenmerk4 = $_POST['kenmerk4'];
-   $kenmerk5 = $_POST['kenmerk5'];
-   
-   }
+    if (!empty($_POST)){
 
-
-if(!empty($_POST)){
-
-	try{
-		$user = new User();
-        
-        
-				
-        $user->setKenmerk1($_POST['kenmerk1']);
-        $user->setKenmerk2($_POST['kenmerk2']);
-        $user->setKenmerk3($_POST['kenmerk3']);
-        $user->setKenmerk4($_POST['kenmerk4']);
-        $user->setKenmerk5($_POST['kenmerk5']);
-
-
-		$user->saveKenmerken();
-	}
-
-	catch (\Throwable $th){
-		$error = $th->getMessage();
-    }
+        $user = new User();
+        $kenmerk1 = $_POST['kenmerk1'];
+        $kenmerk2 = $_POST['kenmerk2'];
+        $kenmerk3 = $_POST['kenmerk3'];
+        $kenmerk4 = $_POST['kenmerk4'];
+        $kenmerk5 = $_POST['kenmerk5'];
     
-}
+    }
+
+
+    if(!empty($_POST)){
+
+        try{
+            $user = new User();
+            
+            $user->setKenmerk1($_POST['kenmerk1']);
+            $user->setKenmerk2($_POST['kenmerk2']);
+            $user->setKenmerk3($_POST['kenmerk3']);
+            $user->setKenmerk4($_POST['kenmerk4']);
+            $user->setKenmerk5($_POST['kenmerk5']);
+
+            $user->saveKenmerken();
+        }
+
+        catch (\Throwable $th){
+            $error = $th->getMessage();
+        }
+        
+    }
 
 ?>
 

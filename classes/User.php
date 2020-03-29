@@ -1,13 +1,15 @@
 <?php
 
-        include_once (__DIR__ . "/Db.php");
+    include_once ('../db/db.php');
 
     class User{
-        private $id;
+
+        private $voornaam;
+        private $achternaam;
         private $email;
-        private $voornaam; 
-        private $achternaam; 
-        private $wachtwoord;
+        private $password;
+        private $profielfoto;
+        private $buddy;
 
         private $kenmerk1; 
         private $kenmerk2; 
@@ -15,278 +17,264 @@
         private $kenmerk4; 
         private $kenmerk5;
 
-        // getters en setters
-
-        /**
-         * Get the value of email
-         */ 
-        public function getEmail()
-        {
-                return $this->email;
+        public function getVoornaam(){
+            return $this->voornaam;
         }
 
-        /**
-         * Set the value of email
-         *
-         * @return  self
-         */ 
-        public function setEmail($email)
-        {       
-                
-        if (empty ($email)){
-        throw new Exception ("email mag niet leeg zijn");
+        public function setVoornaam($voornaam){
+
+            if (empty ($voornaam)){
+                throw new Exception ("Gelieve je voornaam in te voeren.");
+            }
+
+            $this->voornaam = $voornaam;
+            return $this;
+        }
+        
+        public function getAchternaam(){
+            return $this->achternaam;
         }
 
+        public function setAchternaam($achternaam){
 
-        // email controleren 
-        $emailCheck = strrpos($email, "@student.thomasmore.be");
-        if ($emailCheck === false) { 
+            if (empty ($achternaam)){
+                throw new Exception ("Gelieve je achternaam in te voeren.");
+            }  
+            
+            $this->achternaam = $achternaam;
+            return $this;
+        }
+
+        public function getEmail(){
+            return $this->email;
+        }
+
+        public function setEmail($email){
+            
+            $emailCheck = strrpos($email, "@student.thomasmore.be");
+
+            if (empty ($email)){
+                throw new Exception ("Gelieve je email in te voeren.");
+            }
+
+            if ($emailCheck === false) { 
                 throw new Exception ("Vul een geldig email adress in");
+            }
+    
+            $this->email = $email;
+            return $this;
         }
 
-      
+        public function getPassword(){
+                return $this->password;
+        }
 
+        public function setPassword($password){
 
-                $this->email = $email;
+            if (empty ($wachtwoord)){
+                throw new Exception ("Gelieve jouw wachtwoord in te voeren.");
+            }
 
+            $this->password = $password;
+            return $this;
+        }
+
+        public function getProfielfoto(){
+                return $this->profielfoto;
+        }
+
+        public function setProfielfoto($profielfoto){
+                $this->profielfoto = $profielfoto;
                 return $this;
         }
 
-        /**
-         * Get the value of voornaam
-         */ 
-        public function getVoornaam()
-        {
-                return $this->voornaam;
+        public function getBuddy(){
+            return $this->buddy;
         }
 
-        /**
-         * Set the value of voornaam
-         *
-         * @return  self
-         */ 
-        public function setVoornaam($voornaam)
-        {       if (empty ($voornaam)){
-                throw new Exception ("voornaam mag niet leeg zijn");
-        }
-                $this->voornaam = $voornaam;
-
+        public function setBuddy($buddy){
+                $this->buddy = $buddy;
                 return $this;
         }
 
-        /**
-         * Get the value of achternaam
-         */ 
-        public function getAchternaam()
-        {
-                return $this->achternaam;
+        public function getKenmerk1(){
+            return $this->kenmerk1;
         }
 
-        /**
-         * Set the value of achternaam
-         *
-         * @return  self
-         */ 
-        public function setAchternaam($achternaam)
-        {       if (empty ($achternaam)){
-                throw new Exception ("achternaam mag niet leeg zijn");
-        }
-                $this->achternaam = $achternaam;
-
-                return $this;
+        public function setKenmerk1($kenmerk1){
+            $this->kenmerk1 = $kenmerk1;
+            return $this;
         }
 
-        /**
-         * Get the value of wachtwoord
-         */ 
-        public function getWachtwoord()
-        {
-                return $this->wachtwoord;
+        public function getKenmerk2(){
+            return $this->kenmerk2;
         }
 
-        /**
-         * Set the value of wachtwoord
-         *
-         * @return  self
-         */ 
-        public function setWachtwoord($wachtwoord)
-        {       if (empty ($wachtwoord)){
-                throw new Exception ("wachtwoord mag niet leeg zijn");
-        }
-                $this->wachtwoord = $wachtwoord;
-
-                return $this;
+        public function setKenmerk2($kenmerk2){
+            $this->kenmerk2 = $kenmerk2;
+            return $this;
         }
 
-        //getters en setters kenmerken
-
-
-
-        public function getKenmerk1()
-        {
-                return $this->kenmerk1;
+        public function getKenmerk3(){
+            return $this->kenmerk3;
         }
 
-        /**
-         * Set the value of kenmerk1
-         *
-         * @return  self
-         */ 
-        public function setKenmerk1($kenmerk1)
-        {
-                $this->kenmerk1 = $kenmerk1;
-
-                return $this;
+        public function setKenmerk3($kenmerk3){
+            $this->kenmerk3 = $kenmerk3;
+            return $this;
         }
 
-        /**
-         * Get the value of kenmerk2
-         */ 
-        public function getKenmerk2()
-        {
-                return $this->kenmerk2;
+        public function getKenmerk4(){
+            return $this->kenmerk4;
         }
 
-        /**
-         * Set the value of kenmerk2
-         *
-         * @return  self
-         */ 
-        public function setKenmerk2($kenmerk2)
-        {
-                $this->kenmerk2 = $kenmerk2;
-
-                return $this;
+        public function setKenmerk4($kenmerk4){
+            $this->kenmerk4 = $kenmerk4;
+            return $this;
         }
 
-        /**
-         * Get the value of kenmerk3
-         */ 
-        public function getKenmerk3()
-        {
-                return $this->kenmerk3;
+        public function getKenmerk5(){
+            return $this->kenmerk5;
         }
 
-        /**
-         * Set the value of kenmerk3
-         *
-         * @return  self
-         */ 
-        public function setKenmerk3($kenmerk3)
-        {
-                $this->kenmerk3 = $kenmerk3;
-
-                return $this;
+        public function setKenmerk5($kenmerk5){
+            $this->kenmerk5 = $kenmerk5;
+            return $this;
         }
-
-        /**
-         * Get the value of kenmerk4
-         */ 
-        public function getKenmerk4()
-        {
-                return $this->kenmerk4;
-        }
-
-        /**
-         * Set the value of kenmerk4
-         *
-         * @return  self
-         */ 
-        public function setKenmerk4($kenmerk4)
-        {
-                $this->kenmerk4 = $kenmerk4;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of kenmerk5
-         */ 
-        public function getKenmerk5()
-        {
-                return $this->kenmerk5;
-        }
-
-        /**
-         * Set the value of kenmerk5
-         *
-         * @return  self
-         */ 
-        public function setKenmerk5($kenmerk5)
-        {
-                $this->kenmerk5 = $kenmerk5;
-
-                return $this;
-        }
-
 
         public static function getAll(){
-                $conn = Db::getConnection();
-                $statement = $conn->prepare("select * from users");
-                $statement->execute();
-                $users = $statement->fetchAll(PDO::FETCH_ASSOC);
-                return $users;
-        }
 
-        // user opslaan in databank
+            $conn = Db::getConnection();
+            $statement = $conn->prepare("select * from users");
+            $statement->execute();
+            $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $users;
+        }
 
         public function save(){
-                $conn = Db::getConnection();
 
-                //dubbele emails controleren
-                if (isset($_POST['email'])) {
-                        $email = $this->getEmail();
-                        $conn = Db::getConnection();
-                        $sql = "SELECT * FROM users WHERE email='$email'";
-                        $results = $conn->query($sql);
-                        if ($results->rowCount() > 0) {
-                                throw new Exception("Email is already used");
-                                echo "taken";
-                        }
-                
-                }
+            $conn = Db::getConnection();
 
-                $statement = $conn->prepare("insert into users (email, voornaam, achternaam, wachtwoord) values (:email, :voornaam, :achternaam, :wachtwoord)");
+            //dubbele emails controleren
+            if (isset($_POST['email'])) {
 
                 $email = $this->getEmail();
-                $voornaam = $this->getVoornaam();
-                $achternaam = $this->getAchternaam();
-                $wachtwoord = $this->getWachtwoord();
+                $conn = Db::getConnection();
+                $sql = "SELECT * FROM users WHERE email='$email'";
+                $results = $conn->query($sql);
 
-                $statement->bindValue(":email", $email);
-                $statement->bindValue(":voornaam", $voornaam);
-                 $statement->bindValue(":achternaam", $achternaam);
-                $statement->bindValue(":wachtwoord", $wachtwoord);
+                if ($results->rowCount() > 0) {
+                        throw new Exception("Het ingegeven emailadres is al reeds in gebruik.");
+                        echo "taken";
+                }
+            
+            }
+
+            $statement = $conn->prepare("insert into users (email, voornaam, achternaam, wachtwoord) values (:email, :voornaam, :achternaam, :wachtwoord)");
+
+            $email = $this->getEmail();
+            $voornaam = $this->getVoornaam();
+            $achternaam = $this->getAchternaam();
+            $wachtwoord = $this->getWachtwoord();
+
+            $statement->bindValue(":email", $email);
+            $statement->bindValue(":voornaam", $voornaam);
+            $statement->bindValue(":achternaam", $achternaam);
+            $statement->bindValue(":wachtwoord", $wachtwoord);
 
 
-                $result = $statement->execute();
-                return $result;
+            $result = $statement->execute();
+            return $result;
         }
 
-        // kenmerken opslaan in databank
+        public function canLogin() {
+
+            $conn = Db::getConnection();
+            $statement = $conn->prepare("select wachtwoord from users where email = :email");
+            $statement->bindValue(":email", $this->email);
+            $statement->execute();
+            $dbPassword = $statement->fetchColumn();
+
+            if (password_verify($this->password, $dbPassword)) {
+                session_start();
+                $_SESSION['email'] = $this->email;
+                header('location: index.php');
+            }
+        }
+
+        public function changeSettings($email, $newEmail, $voornaam, $achternaam, $profielfoto, $buddy, $newpassword){ 
+
+            $conn = Db::getConnection();
+                
+            if($email != $newEmail){
+                $statementCheck = $conn->prepare("select * from users where email = :email");
+                $statementCheck->bindValue(":email", $email);
+                $statementCheck->execute();
+                $userExist = $statementCheck->rowCount();
+            }
+                
+            else{
+                $userExist = 0;
+            }
+        
+            if ($userExist == 0) {
+                //username bestaat niet of is niet veranderd, gegevens aanpassen
+                $code ='';
+
+                if(!empty($newpassword)){
+                    $settings = [
+                        "cost" => 12
+                    ];
+                    $newpasswordhash = password_hash($newpassword, PASSWORD_DEFAULT, $settings);
+                    $code = ", password = '".$newpasswordhash."'";
+                }
+        
+                $conn =  Db::getConnection();
+                $statement = $conn->prepare("UPDATE users SET email=:newEmail, voornaam=:voornaam, achternaam=:achternaam, profielfoto=:profielfoto, buddy=:buddy ".$code." WHERE email = $email");
+                $statement->bindValue(":newEmail", $newEmail);
+                $statement->bindValue(":voornaam", $voornaam);
+                $statement->bindValue(":achternaam", $achternaam);
+                $statement->bindValue(":profielfoto", $profielfoto);
+                $statement->bindValue(":buddy", $buddy);
+        
+                if($statement->execute()){
+                    return true;
+                }
+                        
+                else{
+                        //echo "Er is iets foutgelopen bij het updaten.";
+                        echo $email . "___" . $newEmail . "___" . $voornaam . "___" . $achternaam . "___" . $profielfoto . "___" . $buddy . "___" . $newpassword; 
+                }
+
+            }
+                
+            else{
+                //username bestaat wel, mag niet veranderd worden
+                return "ERROR: Deze username bestaat al.";
+            }
+        }
 
         public function saveKenmerken(){
-                $conn = Db::getConnection();
+            $conn = Db::getConnection();
 
+            $statement = $conn->prepare("insert into users (kenmerk1, kenmerk2, kenmerk3, kenmerk4, kenmerk5) values (:kenmerk1, :kenmerk2, :kenmerk3, :kenmerk4, :kenmerk5)");
 
-                $statement = $conn->prepare("insert into users (kenmerk1, kenmerk2, kenmerk3, kenmerk4, kenmerk5) values (:kenmerk1, :kenmerk2, :kenmerk3, :kenmerk4, :kenmerk5)");
+            $kenmerk1 = $this->getKenmerk1();
+            $kenmerk2 = $this->getKenmerk2();
+            $kenmerk3 = $this->getKenmerk3();
+            $kenmerk4 = $this->getKenmerk4();
+            $kenmerk5 = $this->getKenmerk5();
 
-                $kenmerk1 = $this->getKenmerk1();
-                $kenmerk2 = $this->getKenmerk2();
-                $kenmerk3 = $this->getKenmerk3();
-                $kenmerk4 = $this->getKenmerk4();
-                $kenmerk5 = $this->getKenmerk5();
+            $statement->bindValue(":kenmerk1", $kenmerk1);
+            $statement->bindValue(":kenmerk2", $kenmerk2);
+            $statement->bindValue(":kenmerk3", $kenmerk3);
+            $statement->bindValue(":kenmerk4", $kenmerk4);
+            $statement->bindValue(":kenmerk5", $kenmerk5);
 
-                $statement->bindValue(":kenmerk1", $kenmerk1);
-                $statement->bindValue(":kenmerk2", $kenmerk2);
-                 $statement->bindValue(":kenmerk3", $kenmerk3);
-                $statement->bindValue(":kenmerk4", $kenmerk4);
-                $statement->bindValue(":kenmerk5", $kenmerk5);
-
-
-                $result = $statement->execute();
-                return $result;
+            $result = $statement->execute();
+            return $result;
         }
-
-
     }
+
+?>

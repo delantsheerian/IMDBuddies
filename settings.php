@@ -1,7 +1,7 @@
 <?php
     
-    include_once(__DIR__ . "/classes/Db.class.php");
-    include_once(__DIR__ . "/classes/User.class.php");
+    include_once(__DIR__ . "/db/db.php");
+    include_once(__DIR__ . "/classes/User.php");
 
     // NOG TIMESTAMP TOEVOEGEN!!
 
