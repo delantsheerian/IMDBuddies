@@ -111,11 +111,12 @@ include_once(__DIR__ . "./db/db.php");
         </div>
     </div>
 
+
 <div class="form__field">
 					<input type="submit" value="Aanmelden" class="btn-aanmelden">	
 					
 				</div>
-</div>
+
 
 
 </body>
