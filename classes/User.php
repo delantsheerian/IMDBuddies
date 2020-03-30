@@ -1,6 +1,7 @@
 <?php
 
-    include_once ('Db.php');
+include_once(__DIR__ . "/../db/db.php");
+
 
     class User{
 
@@ -71,13 +72,11 @@
 
         public function setPassword($password){
 
-            if (empty ($wachtwoord)){
-                throw new Exception ("Gelieve jouw wachtwoord in te voeren.");
+            if (empty ($password)){
+                throw new Exception ("Gelieve een wachtwoord in te voeren.");
             }
 
-            else {
-                echo "Great success! 👨🏻";
-            }
+            
 
             $this->password = $password;
             return $this;
@@ -180,12 +179,12 @@
             $email = $this->getEmail();
             $voornaam = $this->getVoornaam();
             $achternaam = $this->getAchternaam();
-            $password = $this->getPassword();
+            $wachtwoord = $this->getPassword();
 
             $statement->bindValue(":email", $email);
             $statement->bindValue(":voornaam", $voornaam);
             $statement->bindValue(":achternaam", $achternaam);
-            $statement->bindValue(":wachtwoord", $password);
+            $statement->bindValue(":wachtwoord", $wachtwoord);
 
 
             $result = $statement->execute();
@@ -281,4 +280,3 @@
         }
     }
 
-?>

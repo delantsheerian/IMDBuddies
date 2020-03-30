@@ -1,7 +1,9 @@
 <?php
 
-    include_once(__DIR__ . "/classes/Db.php");
-    include_once(__DIR__ . "/classes/User.php");
+
+include_once(__DIR__ . "/classes/User.php");
+include_once(__DIR__ . "/db/db.php");
+
 
     if (!empty($_POST)){
 
@@ -29,11 +31,14 @@
             $user->saveKenmerken();
         }
 
-        catch (\Throwable $th){
-            $error = $th->getMessage();
-        }
-        
-    }
+
+	catch (\Throwable $th){
+		$error = $th->getMessage();
+
+
+
+	}
+}
 
 ?>
 
@@ -45,6 +50,7 @@
     <title>Document</title>
 </head>
 <body>
+
 
 <div class="aanmakenKenmerken">
 		<div class="form kenmerken">
@@ -99,12 +105,18 @@
                     <br>
                     <br>
 
-                <div class="form__field">
-					<input type="submit" value="Aanmelden" class="btn-aanmelden">	
-					
-				</div>
+  
             </div>
         </div>
     </div>
+
+
+<div class="form__field">
+					<input type="submit" value="Aanmelden" class="btn-aanmelden">	
+					
+				</div>
+
+
+
 </body>
 </html>

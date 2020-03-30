@@ -1,6 +1,7 @@
+
 <?php
 
-	include_once (__DIR__ . "/classes/Db.php");
+	include_once (__DIR__ . "/db/db.php");
 	include_once(__DIR__ . "/classes/User.php");
 	
 	
@@ -16,12 +17,14 @@
 
 	if(!empty($_POST)){
 		
+
 		try{
 			
 			$user = new User();
 			
-			//wachtwoord beveiligen
+					//wachtwoord beveiligen
 			$wachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT, ['cost' => 12]); //2 tot de zoveelste keer gehasht
+			
 			
 			$user->setEmail($_POST['email']);
 			$user->setVoornaam($_POST['voornaam']);
@@ -29,6 +32,7 @@
 			$user->setPassword($wachtwoord);
 
 
+		
 			$user->save();
 			$succes="user saved";
 		}
@@ -48,7 +52,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Aanmelden bij Companion</title>
