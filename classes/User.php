@@ -72,9 +72,11 @@ include_once(__DIR__ . "/../db/db.php");
 
         public function setPassword($password){
 
-            if (empty ($wachtwoord)){
-                throw new Exception ("Gelieve jouw wachtwoord in te voeren.");
+            if (empty ($password)){
+                throw new Exception ("Gelieve een wachtwoord in te voeren.");
             }
+
+            
 
             $this->password = $password;
             return $this;
