@@ -1,6 +1,6 @@
 <?php
 
-    include_once(__DIR__ . "/db/db.php");
+    include_once(__DIR__ . "/classes/Db.php");
 
 ?>
 
