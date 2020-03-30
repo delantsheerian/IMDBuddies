@@ -107,10 +107,7 @@ include_once(__DIR__ . "/classes/User.php");
                     <br>
                     <br>
 
-                <div class="form__field">
-					<input type="submit" value="Aanmelden" class="btn-aanmelden">	
-					
-				</div>
+  
             </div>
         </div>
     </div>
