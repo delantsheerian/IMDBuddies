@@ -1,7 +1,9 @@
 <?php
 
+
 include_once(__DIR__ . "/classes/User.php");
-include_once(__DIR__ . "./db/db.php");
+include_once(__DIR__ . "/db/db.php");
+
 
     if (!empty($_POST)){
 
