@@ -2,7 +2,7 @@
 <?php
 
 	/*include_once (__DIR__ . "/db/db.php");*/
-	include_once(__DIR__ . "/classes/user.php");
+	include_once(__DIR__ . "/classes/User.php");
 	
 	
 	if (!empty($_POST)){	
