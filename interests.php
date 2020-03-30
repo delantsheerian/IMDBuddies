@@ -3,7 +3,6 @@
 include_once(__DIR__ . "/classes/User.php");
 
     include_once(__DIR__ . "/db/db.php");
-    include_once(__DIR__ . "/classes/user.php");
 
     if (!empty($_POST)){
 
@@ -15,19 +14,6 @@ include_once(__DIR__ . "/classes/User.php");
         $kenmerk5 = $_POST['kenmerk5'];
     
     }
-
-
-
-	try{
-		$user = new User();
-        
-
-				
-        $user->setKenmerk1($_POST['kenmerk1']);
-        $user->setKenmerk2($_POST['kenmerk2']);
-        $user->setKenmerk3($_POST['kenmerk3']);
-        $user->setKenmerk4($_POST['kenmerk4']);
-        $user->setKenmerk5($_POST['kenmerk5']);
 
 
     if(!empty($_POST)){
@@ -53,6 +39,7 @@ include_once(__DIR__ . "/classes/User.php");
 	}
 }
 
+    
 
 
 ?>
