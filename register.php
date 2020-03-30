@@ -23,14 +23,12 @@
 			//wachtwoord beveiligen
 			$wachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT, ['cost' => 12]); //2 tot de zoveelste keer gehasht
 			
-			
 			$user->setEmail($_POST['email']);
 			$user->setVoornaam($_POST['voornaam']);
 			$user->setAchternaam($_POST['achternaam']);
 			$user->setPassword($wachtwoord);
 
 
-		
 			$user->save();
 			$succes="user saved";
 		}
