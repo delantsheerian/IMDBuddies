@@ -202,7 +202,7 @@ include_once(__DIR__ . "/../db/db.php");
             if (password_verify($this->password, $dbPassword)) {
                 session_start();
                 $_SESSION['email'] = $this->email;
-                header('location: index.php');
+                header('location: interests.php');
             }
         }
 
