@@ -11,6 +11,7 @@ include_once(__DIR__ . "/../db/db.php");
         private $password;
         private $profielfoto;
         private $buddy;
+        protected $userID
 
         private $kenmerk1; 
         private $kenmerk2; 
@@ -98,6 +99,19 @@ include_once(__DIR__ . "/../db/db.php");
         public function setBuddy($buddy){
             $this->buddy = $buddy;
             return $this;
+        }
+
+        
+        public function getUserID()
+        {
+                return $this->userID;
+        }
+        
+        public function setUserID($userID)
+        {
+                $this->userID = $userID;
+
+                return $this;
         }
 
         public function getKenmerk1(){
@@ -263,7 +277,8 @@ include_once(__DIR__ . "/../db/db.php");
         public function saveKenmerken(){
             $conn = Db::getConnection();
 
-            $statement = $conn->prepare("insert into users (kenmerk1, kenmerk2, kenmerk3, kenmerk4, kenmerk5) values (:kenmerk1, :kenmerk2, :kenmerk3, :kenmerk4, :kenmerk5)");
+
+            $statement = $conn->prepare("update into users (kenmerk1, kenmerk2, kenmerk3, kenmerk4, kenmerk5) values (:kenmerk1, :kenmerk2, :kenmerk3, :kenmerk4, :kenmerk5)");
 
             $kenmerk1 = $this->getKenmerk1();
             $kenmerk2 = $this->getKenmerk2();
@@ -280,5 +295,8 @@ include_once(__DIR__ . "/../db/db.php");
             $result = $statement->execute();
             return $result;
         }
+
+
+
     }
 
