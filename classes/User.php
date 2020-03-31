@@ -11,6 +11,7 @@ include_once(__DIR__ . "/../db/db.php");
         private $password;
         private $profielfoto;
         private $buddy;
+        protected $userID
 
         private $kenmerk1; 
         private $kenmerk2; 
@@ -98,6 +99,19 @@ include_once(__DIR__ . "/../db/db.php");
         public function setBuddy($buddy){
             $this->buddy = $buddy;
             return $this;
+        }
+
+        
+        public function getUserID()
+        {
+                return $this->userID;
+        }
+        
+        public function setUserID($userID)
+        {
+                $this->userID = $userID;
+
+                return $this;
         }
 
         public function getKenmerk1(){
@@ -263,19 +277,6 @@ include_once(__DIR__ . "/../db/db.php");
         public function saveKenmerken(){
             $conn = Db::getConnection();
 
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-            
-            $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-            
-            if (mysqli_query($conn, $sql)) {
-                echo "Record updated successfully";
-            } else {
-                echo "Error updating record: " . mysqli_error($conn);
-            }
-            
-            mysqli_close($conn);
 
             $statement = $conn->prepare("update into users (kenmerk1, kenmerk2, kenmerk3, kenmerk4, kenmerk5) values (:kenmerk1, :kenmerk2, :kenmerk3, :kenmerk4, :kenmerk5)");
 
@@ -294,6 +295,7 @@ include_once(__DIR__ . "/../db/db.php");
             $result = $statement->execute();
             return $result;
         }
+
 
 
     }
