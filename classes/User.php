@@ -171,6 +171,8 @@ include_once(__DIR__ . "/../db/db.php");
                         throw new Exception("Het ingegeven emailadres is al reeds in gebruik.");
                         echo "taken";
                 }
+
+                header('location: index.php');
             
             }
 
