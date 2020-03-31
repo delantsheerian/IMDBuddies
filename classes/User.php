@@ -91,17 +91,7 @@ include_once(__DIR__ . "/../db/db.php");
             return $this;
         }
 
-        public function getBuddy(){
-            return $this->buddy;
-        }
 
-        public function setBuddy($buddy){
-            $this->buddy = $buddy;
-            return $this;
-        }
-
-        
-        
         public function getKenmerk1(){
             return $this->kenmerk1;
         }
