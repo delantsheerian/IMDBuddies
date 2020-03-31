@@ -11,7 +11,7 @@ include_once(__DIR__ . "/../db/db.php");
         private $password;
         private $profielfoto;
         private $buddy;
-        protected $userID;
+        private $userID;
 
         private $kenmerk1; 
         private $kenmerk2; 
