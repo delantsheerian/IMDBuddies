@@ -1,21 +1,62 @@
-.aanmeldenBuddy{
-padding-left: 40px;
-padding-top: 20px;
-width: 200px;
-}
+body { margin: 0; }
 
 h2{
-  color:#0049FF;
   font-family: Arial, Helvetica, sans-serif;  
+  font-weight: bold;
+  color: black
 }
 
+.aanmeldenBuddy {
+    width: 55%;
+    margin: 18% auto 0 auto;
+}
 .aanmeldenBuddy label {
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 20px;
-    width: 200px;
+    font-weight: bold;
+    margin: 10px 0;
+    width: 50%;
+    float: left;
 }
 
+.registrerenBuddy {
+    width: 55%;
+    margin: 10% auto 0 auto;
+}
+.registrerenBuddy label {
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 10px 0;
+    width: 50%;
+    float: left;
+}
+
+.registrerenBuddy .input {
+    width: 100%;
+    height: 40px;
+    background-color: #E8E8E8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    margin: 0;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    background-color: #E8E8E8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    margin: 0;
+}
+
+.input { padding-left: 10px; }
 
 #Wachtwoord, #Voornaam, #Achternaam, #Email{
     width: 300px;
@@ -25,17 +66,20 @@ h2{
 }
 
 .btn-aanmelden{
-    text-align: center;
-    border-radius:4% ;
-    padding: 7px;
-    border: none;
-    background-color:#0049FF;
     width: 160px;
-    color:white;
+    padding: 15px 10px;
+    margin: 30px 0;
     font-family: Arial, Helvetica, sans-serif;
-    
-
+    font-size: 15px;
+    font-weight: 700;
+    color:white;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color:#368483;
 }
+
+#password_field { margin: 10px 0 0 0; }
 
 .formerror{
    color:red;
@@ -45,4 +89,38 @@ h2{
    padding-top: 3px;
    padding-bottom:3px;
    font-family: Arial, Helvetica, sans-serif;
+}
+
+#form_title h2{ margin: 0 0 50px 0; }
+
+#geen_lid, #lid { 
+    padding: 50px 50px 0 0;
+    float: right; 
+}
+
+#geen_lid p, #lid p { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#geen_lid a, #lid a {
+    color: #368483;
+    text-decoration: none;
+}
+
+#banner {
+    width: 40%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/root/creativity-gym.jpg);
+    background-size: cover;
+    background-position: center center;
+    float: left;
+}
+
+#form {
+    width: 60%;
+    margin: 0 auto;
+    float: left;
 }
