@@ -11,7 +11,6 @@ include_once(__DIR__ . "/../db/db.php");
         private $password;
         private $profielfoto;
         private $buddy;
-        private $userID;
 
         private $kenmerk1; 
         private $kenmerk2; 
@@ -102,18 +101,7 @@ include_once(__DIR__ . "/../db/db.php");
         }
 
         
-        public function getUserID()
-        {
-                return $this->userID;
-        }
         
-        public function setUserID($userID)
-        {
-                $this->userID = $userID;
-
-                return $this;
-        }
-
         public function getKenmerk1(){
             return $this->kenmerk1;
         }
