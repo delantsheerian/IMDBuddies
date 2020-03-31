@@ -11,10 +11,12 @@
         $login->setEmail($email);
         $login->setPassword($password);
         $login->canLogin();
+
         if (!$login->canLogin()) {
             $error = "Er liep iets fout.";
         }
     }
+
 
 ?>
 
@@ -51,6 +53,7 @@
 			<input type="submit" value="Sign me up">
 		</div>
         
+
         </form>
 </body>
 </html>
