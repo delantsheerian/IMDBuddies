@@ -91,18 +91,6 @@ include_once(__DIR__ . "/../db/db.php");
             return $this;
         }
 
-        
-        public function getUserID()
-        {
-                return $this->userID;
-        }
-
-        public function setUserID($userID)
-        {
-                $this->userID = $userID;
-
-                return $this;
-        }
 
         public function getKenmerk1(){
             return $this->kenmerk1;
